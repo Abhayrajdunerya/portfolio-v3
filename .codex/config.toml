@@ -1,0 +1,9 @@
+[mcp_servers.awwwards-mcp]
+command = "pnpm.cmd"
+args = ["exec", "awwwards-mcp"]
+startup_timeout_sec = 30
+
+[mcp_servers.agent-browser]
+command = "pnpm.cmd"
+args = ["exec", "agent-browser", "mcp"]
+startup_timeout_sec = 30
