@@ -19,7 +19,7 @@ pnpm start
 
 ## Content and design
 
-- `/`: introduction, selected work, experience, engineering focus, education, and contact.
+- `/`: introduction, selected work, experience, skills and technologies, education, and contact.
 - `/work`: project archive with URL-persisted category filtering through nuqs.
 - `/work/[slug]`: four case studies, including clear individual/team contributions and project context.
 - `src/lib/portfolio.ts`: typed project content and contact links.
@@ -40,3 +40,5 @@ The professional case study is anonymized and attributed to employment at Nucleu
 ## Current stage
 
 Design first. Animation and deployment are deferred. See `DESIGN-HANDOFF.md` for verified checks and remaining work. Ignored `cook/` contains local screenshots and the iteration ledger.
+
+`src/components/skills-section.tsx` uses monochrome technology logos from [Devicons](https://devicons.io/) through `@dev.icons/react`. The Devicons MCP is configured globally; this repository does not duplicate that configuration.

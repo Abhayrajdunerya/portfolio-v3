@@ -5,7 +5,7 @@ Updated 2026-11-15 after the user requested continuation. Design-first scope rem
 ## Implemented
 
 - Next.js 16 App Router, TypeScript, React Compiler, Cache Components, Tailwind 4, ESLint, pnpm, src directory.
-- Homepage: introduction, selected work, employment, engineering focus, education, recognition, contact.
+- Homepage: introduction, selected work, employment, skills and technologies, education, recognition, contact.
 - /work: four project cards, URL-backed nuqs category filter, browser-history support.
 - /work/[slug]: commerce-modernization, bookwise, nyaya-sanchalak, clothify; meaningful loading UI and not-found handling.
 - Typed content in src/lib/portfolio.ts distinguishes employment, training capstone, academic, and team contributions.
@@ -58,7 +58,18 @@ Updated 2026-11-15 after the user requested continuation. Design-first scope rem
 - cook/BRIEF.md, SHOTS.md, ROUNDS.md: scope, references, iteration ledger.
 - cook/ is ignored locally; this handoff is root documentation.
 
-Production preview: http://localhost:3002, started with pnpm start --port 3002. If unavailable, run pnpm build then pnpm start --port 3002. Development uses pnpm dev at http://localhost:3000; use localhost rather than 127.0.0.1 to avoid Next.js development-origin restrictions.
+Production preview: http://localhost:3003, started with pnpm start --port 3003. If unavailable, run pnpm build then pnpm start --port 3003. Development uses pnpm dev at http://localhost:3000; use localhost rather than 127.0.0.1 to avoid Next.js development-origin restrictions.
 
 Final mobile axe results: homepage 40 passes / 0 violations, professional case study 42 passes / 0 violations. Both retain one incomplete contrast rule for diagram backgrounds requiring manual review.
 
+
+## Skills continuation — 2026-11-15
+
+- Confirmed Devicons MCP is already enabled globally at https://devicons.io/api/mcp; successful search/get calls verified the icon choices.
+- Added @dev.icons/react 1.3.0 with eight monochrome, server-rendered technology logos. Text labels remain accessible; decorative SVGs are hidden from assistive technology.
+- Replaced engineering focus with an explicit Skills section: frontend/architecture, backend/data, testing/collaboration. Commercial and capstone experience remain distinguished, with evidence links and no skill ratings.
+- Added Skills to desktop/mobile navigation.
+- Production build, TypeScript, ESLint error check, and full Prettier check passed. Unknown custom Tailwind class warnings remain accepted by user instruction.
+- Chrome and Edge: eight icons render, no horizontal overflow at 1440/1024/768/390/320px, archive-to-Skills navigation works, mobile menu closes, and BookWise evidence link works. Zero JavaScript page errors.
+- Visually inspected desktop and mobile screenshots under cook/stills/r04. No new independent numeric design score is claimed.
+- Other remaining decisions and unperformed checks listed above still apply. No animation or deployment added.

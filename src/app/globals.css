@@ -1614,3 +1614,131 @@ h2 {
     font-size: 12px;
   }
 }
+
+/* Skills: recognizable tools with explicit experience context and evidence. */
+.skills-section {
+  scroll-margin-top: 28px;
+}
+.skills-intro {
+  max-width: 330px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--border);
+}
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px 28px;
+}
+.skill-group:first-child {
+  padding-left: 0;
+}
+.skill-group:last-child {
+  padding-right: 0;
+}
+.skill-group + .skill-group {
+  border-left: 1px solid var(--border);
+}
+.skill-group h3 {
+  font-size: 21px;
+  font-weight: 450;
+  letter-spacing: -0.6px;
+}
+.skill-context {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-top: 9px;
+}
+.skill-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 25px;
+  padding: 0;
+  list-style: none;
+}
+.skill-technologies li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: 12px;
+}
+.skill-technologies svg {
+  flex-shrink: 0;
+  color: var(--foreground);
+}
+.skill-practices {
+  margin: 0 0 30px;
+  padding-left: 14px;
+  list-style: disc;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.skill-practices li + li {
+  margin-top: 10px;
+}
+.skill-practices li::marker {
+  color: var(--brand);
+}
+.skill-evidence {
+  align-self: flex-start;
+  margin-top: auto;
+  line-height: 1.6;
+}
+@media (max-width: 1100px) {
+  .skill-group {
+    padding-inline: 20px;
+  }
+  .skill-group h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-group,
+  .skill-group:first-child,
+  .skill-group:last-child {
+    padding: 28px 0;
+  }
+  .skill-group + .skill-group {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .skill-group h3 {
+    font-size: 22px;
+  }
+  .skill-technologies {
+    margin-block: 22px;
+  }
+  .skills-intro {
+    max-width: 260px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 550px) {
+  .skills-intro {
+    max-width: 330px;
+  }
+  .skill-technologies {
+    gap: 8px;
+  }
+  .skill-technologies li {
+    padding: 10px;
+  }
+  .skill-evidence {
+    font-size: 12px;
+  }
+}

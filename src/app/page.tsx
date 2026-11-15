@@ -9,6 +9,7 @@ import Link from "next/link";
 
 import { ProjectCard } from "@/components/project-card";
 import { ProjectVisual } from "@/components/project-visual";
+import { SkillsSection } from "@/components/skills-section";
 import { profile, projects } from "@/lib/portfolio";
 
 export default function Home() {
@@ -185,49 +186,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="section-block">
-          <div className="section-heading">
-            <div>
-              <p className="section-label">Engineering focus</p>
-              <h2>The interface. And what supports it.</h2>
-            </div>
-          </div>
-          <div className="capability-grid">
-            <div>
-              <span className="capability-symbol">↗</span>
-              <h3>Frontend & architecture</h3>
-              <p>Commercial application experience</p>
-              <ul>
-                <li>React, Next.js & TypeScript</li>
-                <li>Rendering, caching & client state</li>
-                <li>Accessible components & forms</li>
-                <li>Authentication & API integration</li>
-              </ul>
-            </div>
-            <div>
-              <span className="capability-symbol">{"{ }"}</span>
-              <h3>Backend & data</h3>
-              <p>Capstone and project experience</p>
-              <ul>
-                <li>Java, Spring Boot & Spring Security</li>
-                <li>Node.js & Express</li>
-                <li>MySQL, MongoDB & REST APIs</li>
-                <li>Validation & role-based access</li>
-              </ul>
-            </div>
-            <div>
-              <span className="capability-symbol">✓</span>
-              <h3>Quality & collaboration</h3>
-              <p>Practices across my work</p>
-              <ul>
-                <li>Vitest & React Testing Library</li>
-                <li>Playwright & static analysis</li>
-                <li>Code reviews & shared conventions</li>
-                <li>Technical proposals & mentoring</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <SkillsSection />
         <section className="section-block about-section" id="about">
           <div>
             <p className="section-label">A little about me</p>
