@@ -1,6 +1,6 @@
 # Portfolio design handoff
 
-Updated 2026-11-15 after the user requested continuation. Design-first scope remains; animation and deployment are deferred. The main saved technical blockers have been resolved. The subjective 9/10 target is not claimed as achieved.
+Updated 2026-11-15 after the user requested continuation. The user has now authorized animation; deployment remains deferred. The main saved technical blockers have been resolved. The subjective 9/10 target is not claimed as achieved.
 
 ## Implemented
 
@@ -44,7 +44,7 @@ Updated 2026-11-15 after the user requested continuation. Design-first scope rem
 - Full manual assistive-technology and browser-zoom checks, Safari/Firefox, external repository link-health sweep, and production performance metrics are not completed.
 - Set NEXT_PUBLIC_SITE_URL to a verified public origin before publishing. Until then, sitemap has no invented domain and Next.js warns that social metadata falls back to localhost.
 - The website anonymizes the commercial project and attributes it to NucleusTeq employment. The unchanged supplied resume PDF DOES name Fyndr. User was informed; review disclosure before publishing. Do not alter PDF without instruction.
-- Animation requires the later phase requested by the user; none added.
+- First animation pass is implemented. User motion review is pending; additional effects are optional.
 - No deployment. Tooling and portfolio implementation are committed locally as requested; prior setup commits are preserved.
 
 ## Evidence and resumption
@@ -58,7 +58,7 @@ Updated 2026-11-15 after the user requested continuation. Design-first scope rem
 - cook/BRIEF.md, SHOTS.md, ROUNDS.md: scope, references, iteration ledger.
 - cook/ is ignored locally; this handoff is root documentation.
 
-Production preview: http://localhost:3003, started with pnpm start --port 3003. If unavailable, run pnpm build then pnpm start --port 3003. Development uses pnpm dev at http://localhost:3000; use localhost rather than 127.0.0.1 to avoid Next.js development-origin restrictions.
+Production preview: http://localhost:3004, started with pnpm start --port 3004. If unavailable, run pnpm build then pnpm start --port 3004. Development uses pnpm dev at http://localhost:3000; use localhost rather than 127.0.0.1 to avoid Next.js development-origin restrictions.
 
 Final mobile axe results: homepage 40 passes / 0 violations, professional case study 42 passes / 0 violations. Both retain one incomplete contrast rule for diagram backgrounds requiring manual review.
 
@@ -73,3 +73,27 @@ Final mobile axe results: homepage 40 passes / 0 violations, professional case s
 - Chrome and Edge: eight icons render, no horizontal overflow at 1440/1024/768/390/320px, archive-to-Skills navigation works, mobile menu closes, and BookWise evidence link works. Zero JavaScript page errors.
 - Visually inspected desktop and mobile screenshots under cook/stills/r04. No new independent numeric design score is claimed.
 - Other remaining decisions and unperformed checks listed above still apply. No animation or deployment added.
+
+
+## Animation pass — 2026-11-15
+
+User authorized animations and reported 50% allowance remaining, with a planned alert at 20%. Kept this a bounded pass rather than an open-ended visual loop.
+
+Implemented:
+- Hero text enters over 620ms with up to 180ms stagger; architecture panel settles over 850ms. Archive and case-study introductions share the entrance.
+- Section headings, work cards, experience, skill groups, about, and case-study prose reveal once as they enter the viewport (560ms, 16px).
+- Links draw underlines, arrows shift 3px, project links lift 2px, buttons provide hover/press feedback, and the mobile menu enters in 200ms.
+- Native CSS/Web Animations API; no new dependency, continuous loop, scroll handler, or scroll takeover.
+- Server content remains visible without JavaScript. Reduced motion disables CSS motion and running viewport animations; focus cancels active reveals. Observer cleanup supports route changes and archive filtering.
+
+Verified:
+- Clean production build and TypeScript PASS. An incremental Turbopack CSS-worker failure recurred outside the sandbox; stopping previews and clearing only generated .next output resolved it.
+- ESLint error check and Prettier check PASS; accepted custom Tailwind warnings remain unchanged.
+- Final Chrome/Edge motion harness PASS: entrance, hover, five widths (1440/1024/768/390/320), scroll reveals, live/static reduced motion, filters, case-study navigation/Back, mobile Escape focus, and no-JavaScript content. No browser page errors.
+- Keyboard review found and fixed entrance replay after leaving focus. The final harness verifies that regression.
+- Entrance frames at 80/300/850ms saved in cook/stills/r05 and inspected independently: no clipping/overlap. Optional feedback: starting opacity could be raised to keep the headline more prominent at 80ms; retained the short fade for user review. Stills do not establish animation smoothness or a 9/10 score.
+- Taste skill gate returned GATE: OFF (no build active); this was not a gate pass. Explicit production checks above provide the verification evidence.
+
+Pending: user's live motion review, real-device/Safari/Firefox testing, manual assistive-technology review and performance profiling. Domain/disclosure decisions above still apply. No deployment performed.
+
+Evidence: cook/motion-check.cjs, cook/motion-checks.json, cook/stills/r05/. Preview: http://localhost:3004.

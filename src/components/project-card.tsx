@@ -6,7 +6,7 @@ import type { Project } from "@/lib/portfolio";
 import { ProjectVisual } from "./project-visual";
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card">
+    <article className="project-card" data-reveal>
       <Link
         className="project-image-link"
         href={`/work/${project.slug}`}

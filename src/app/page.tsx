@@ -98,7 +98,7 @@ export default function Home() {
           </a>
         </div>
         <section className="section-block" id="selected-work">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="section-label">Selected work</p>
               <h2>Engineering, in practice.</h2>
@@ -107,7 +107,7 @@ export default function Home() {
               All projects <ArrowUpRight size={16} />
             </Link>
           </div>
-          <article className="featured-project">
+          <article className="featured-project" data-reveal>
             <div className="featured-copy">
               <div className="project-meta">
                 <span>Professional work / NucleusTeq</span>
@@ -146,14 +146,14 @@ export default function Home() {
           </div>
         </section>
         <section className="section-block experience-section" id="experience">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="section-label">Experience</p>
               <h2>Ownership, from the start.</h2>
             </div>
             <span className="subtle-note">July 2024 — present</span>
           </div>
-          <div className="experience-grid">
+          <div className="experience-grid" data-reveal>
             <div>
               <h3>Software Engineer</h3>
               <p className="employer">NucleusTeq</p>
@@ -187,7 +187,7 @@ export default function Home() {
           </div>
         </section>
         <SkillsSection />
-        <section className="section-block about-section" id="about">
+        <section className="section-block about-section" id="about" data-reveal>
           <div>
             <p className="section-label">A little about me</p>
             <h2>

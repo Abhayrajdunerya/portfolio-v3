@@ -95,7 +95,11 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
         <article className="prose min-w-0">
           {project.sections.map((section) => (
-            <section key={section.title} className="mb-14 last:mb-0">
+            <section
+              key={section.title}
+              className="mb-14 last:mb-0"
+              data-reveal
+            >
               <h2 className="mb-5 text-2xl font-medium tracking-tight sm:text-3xl">
                 {section.title}
               </h2>
@@ -122,6 +126,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
       <section
         className="section-block border-t border-border"
         aria-labelledby="outcomes-title"
+        data-reveal
       >
         <h2
           id="outcomes-title"

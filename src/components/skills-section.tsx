@@ -68,7 +68,7 @@ export function SkillsSection() {
       id="skills"
       aria-labelledby="skills-title"
     >
-      <div className="section-heading">
+      <div className="section-heading" data-reveal>
         <div>
           <p className="section-label">Skills & technologies</p>
           <h2 id="skills-title">Skills, put to work.</h2>
@@ -80,7 +80,7 @@ export function SkillsSection() {
       </div>
       <div className="skills-grid">
         {skillGroups.map((group) => (
-          <article className="skill-group" key={group.title}>
+          <article className="skill-group" key={group.title} data-reveal>
             <h3>{group.title}</h3>
             <p className="skill-context">{group.context}</p>
             <ul

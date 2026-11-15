@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
+import { MotionSurface } from "@/components/motion-surface";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteUrl } from "@/lib/site-config";
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <NuqsAdapter>
           <SiteHeader />
-          {children}
+          <MotionSurface>{children}</MotionSurface>
           <SiteFooter />
         </NuqsAdapter>
       </body>
