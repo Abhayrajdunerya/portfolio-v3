@@ -36,6 +36,8 @@ pnpm-debug.log*
 /.vercel/
 /.agent-browser/
 /.awwwards-mcp/
+/cook/
+/.taste-skill/
 
 # OS and editor files
 .DS_Store
