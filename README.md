@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio-v3
 
-## Getting Started
+Abhay Raj Dunerya’s personal engineering portfolio. Built locally with Next.js 16 App Router, TypeScript, React Compiler, Cache Components, Tailwind CSS 4, shadcn/Base UI, and pnpm.
 
-First, run the development server:
+## Development
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+```sh
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Use the `localhost` hostname for Next.js development resources. Production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+pnpm lint
+pnpm build
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content and design
 
-## Learn More
+- `/`: introduction, selected work, experience, engineering focus, education, and contact.
+- `/work`: project archive with URL-persisted category filtering through nuqs.
+- `/work/[slug]`: four case studies, including clear individual/team contributions and project context.
+- `src/lib/portfolio.ts`: typed project content and contact links.
+- `src/app/globals.css`: semantic theme, layout, responsive styles, and conceptual illustrations.
+- `src/components/project-visual.tsx`: code-generated project workflow illustrations; these are not product screenshots.
+- `public/resume/`: the user-supplied, unchanged download PDF.
 
-To learn more about Next.js, take a look at the following resources:
+Pages and project cards are Server Components. Only navigation and filtering need client state. The archive wraps its query-state reader in Suspense. Zod validates the optional deployment origin. Contact uses a real email link instead of a nonfunctional submission form.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Public URL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to the verified public origin before deployment. It controls metadataBase and sitemap URLs. Until it is set, sitemap.xml contains no invented domain and Next.js uses its localhost fallback for social images. The Open Graph image and favicon are generated locally.
 
-## Deploy on Vercel
+## Disclosure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The professional case study is anonymized and attributed to employment at NucleusTeq. The supplied resume PDF still names the commercial product. It has been retained exactly as authorized; review that distinction before publishing. The master career profile and reference screenshots are not served as public assets.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Current stage
+
+Design first. Animation and deployment are deferred. See `DESIGN-HANDOFF.md` for verified checks and remaining work. Ignored `cook/` contains local screenshots and the iteration ledger.

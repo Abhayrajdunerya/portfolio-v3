@@ -1,69 +1,277 @@
-import Image from "next/image";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  ArrowRight,
+  Download,
+  MapPin,
+} from "lucide-react";
+import Link from "next/link";
+
+import { ProjectCard } from "@/components/project-card";
+import { ProjectVisual } from "@/components/project-visual";
+import { profile, projects } from "@/lib/portfolio";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+    <main id="main-content">
+      <div className="shell">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="hero-intro">
+            <p className="section-label">
+              <span className="brand-square" />
+              Software engineer · Abhay Raj Dunerya
+            </p>
+            <h1 id="hero-title">
+              Building the web.
+              <br />
+              <span className="text-muted-foreground">
+                Thinking beyond
+                <br className="desktop-break" /> the interface.
+              </span>
+            </h1>
+            <p className="hero-description">
+              I build and modernize web applications with React and Next.js,
+              connecting thoughtful interfaces with the architecture behind
+              them.
+            </p>
+            <div className="hero-actions">
+              <Link className="primary-link" href="/work">
+                View my work <ArrowUpRight size={18} />
+              </Link>
+              <a className="secondary-link" href={profile.resume} download>
+                Download résumé <Download size={16} />
+              </a>
+            </div>
+            <div className="hero-location">
+              <MapPin size={14} />
+              <span>Indore, India</span>
+              <span className="inline-divider" />
+              <span>Software Engineer at NucleusTeq</span>
+            </div>
+          </div>
+          <div className="hero-aside">
+            <div className="hero-note">
+              <span className="section-label">Current focus</span>
+              <span className="text-brand">↗</span>
+            </div>
+            <div className="hero-architecture">
+              <div className="migration-before">
+                <span>From</span>
+                <strong>React 17</strong>
+                <small>Legacy frontend</small>
+              </div>
+              <div className="migration-connector">
+                <span>Frontend modernization</span>
+                <ArrowDown size={16} />
+              </div>
+              <div className="migration-after">
+                <span>My contribution</span>
+                <strong>
+                  Architecture.
+                  <br />
+                  Implementation.
+                  <br />
+                  Team enablement<span className="text-brand">.</span>
+                </strong>
+                <div>
+                  <span>Next.js 15</span>
+                  <span>Typed boundaries</span>
+                  <span>Testing standards</span>
+                </div>
+              </div>
+            </div>
+            <p className="hero-aside-copy">
+              From a legacy frontend to a modern,
+              <br />
+              maintainable application.
+            </p>
+            <Link href="/work/commerce-modernization" className="text-link">
+              See the modernization story <ArrowUpRight size={15} />
+            </Link>
+          </div>
+        </section>
+        <div className="hero-baseline">
+          <span>Frontend architecture. Full-stack perspective.</span>
+          <a href="#selected-work">
+            Selected work <ArrowDown size={15} />
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
         </div>
-      </main>
-    </div>
+        <section className="section-block" id="selected-work">
+          <div className="section-heading">
+            <div>
+              <p className="section-label">Selected work</p>
+              <h2>Engineering, in practice.</h2>
+            </div>
+            <Link className="text-link" href="/work">
+              All projects <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <article className="featured-project">
+            <div className="featured-copy">
+              <div className="project-meta">
+                <span>Professional work / NucleusTeq</span>
+              </div>
+              <h3>
+                Commerce,
+                <br />
+                modernized.
+              </h3>
+              <p>
+                Proposing and driving a commercial platform’s move from legacy
+                React to Next.js. Architecture, implementation, and the
+                engineering practices to sustain it.
+              </p>
+              <div className="featured-tags">
+                <span>Frontend modernization</span>
+                <span>Next.js 15</span>
+                <span>TypeScript</span>
+              </div>
+              <Link href="/work/commerce-modernization" className="text-link">
+                Read the case study <ArrowUpRight size={18} />
+              </Link>
+            </div>
+            <Link
+              href="/work/commerce-modernization"
+              className="featured-visual-link"
+              aria-label="Read the commerce modernization case study"
+            >
+              <ProjectVisual kind="commerce" />
+            </Link>
+          </article>
+          <div className="project-grid">
+            {projects.slice(1, 3).map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        </section>
+        <section className="section-block experience-section" id="experience">
+          <div className="section-heading">
+            <div>
+              <p className="section-label">Experience</p>
+              <h2>Ownership, from the start.</h2>
+            </div>
+            <span className="subtle-note">July 2024 — present</span>
+          </div>
+          <div className="experience-grid">
+            <div>
+              <h3>Software Engineer</h3>
+              <p className="employer">NucleusTeq</p>
+              <p className="text-sm text-muted-foreground">Indore, India</p>
+            </div>
+            <div className="experience-points">
+              <div>
+                <h4>Initiating a frontend modernization</h4>
+                <p>
+                  Proposed a React-to-Next.js migration, developed the initial
+                  implementation, and became the primary active developer on the
+                  migrated frontend.
+                </p>
+              </div>
+              <div>
+                <h4>Making quality part of the workflow</h4>
+                <p>
+                  Introduced automated frontend testing and static analysis,
+                  established reusable patterns, and reviewed teammates’
+                  contributions.
+                </p>
+              </div>
+              <div>
+                <h4>Sharing what I learn</h4>
+                <p>
+                  Delivered Next.js training for frontend engineers and mentored
+                  junior developers through capstone projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="section-block">
+          <div className="section-heading">
+            <div>
+              <p className="section-label">Engineering focus</p>
+              <h2>The interface. And what supports it.</h2>
+            </div>
+          </div>
+          <div className="capability-grid">
+            <div>
+              <span className="capability-symbol">↗</span>
+              <h3>Frontend & architecture</h3>
+              <p>Commercial application experience</p>
+              <ul>
+                <li>React, Next.js & TypeScript</li>
+                <li>Rendering, caching & client state</li>
+                <li>Accessible components & forms</li>
+                <li>Authentication & API integration</li>
+              </ul>
+            </div>
+            <div>
+              <span className="capability-symbol">{"{ }"}</span>
+              <h3>Backend & data</h3>
+              <p>Capstone and project experience</p>
+              <ul>
+                <li>Java, Spring Boot & Spring Security</li>
+                <li>Node.js & Express</li>
+                <li>MySQL, MongoDB & REST APIs</li>
+                <li>Validation & role-based access</li>
+              </ul>
+            </div>
+            <div>
+              <span className="capability-symbol">✓</span>
+              <h3>Quality & collaboration</h3>
+              <p>Practices across my work</p>
+              <ul>
+                <li>Vitest & React Testing Library</li>
+                <li>Playwright & static analysis</li>
+                <li>Code reviews & shared conventions</li>
+                <li>Technical proposals & mentoring</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section className="section-block about-section" id="about">
+          <div>
+            <p className="section-label">A little about me</p>
+            <h2>
+              Curiosity that turns
+              <br />
+              into working software.
+            </h2>
+            <p>
+              I’m Abhay, a software engineer based in Indore. My work spans
+              commercial frontend engineering and hands-on backend projects in
+              Java and JavaScript.
+            </p>
+            <p>
+              My work often starts with a question about the existing system:
+              how a page renders, where state belongs, or how the next developer
+              will understand it.
+            </p>
+            <a className="text-link" href={profile.resume} download>
+              More in my résumé <ArrowRight size={16} />
+            </a>
+          </div>
+          <div className="recognition">
+            <div>
+              <span className="section-label">Education</span>
+              <h3>B.E. Information Technology</h3>
+              <p>IET DAVV, Indore · 2020–2024</p>
+              <span className="small-detail">CGPA 8.36 / 10</span>
+            </div>
+            <div>
+              <span className="section-label">Recognition</span>
+              <h3>NucleusTeq Sparkling Stars</h3>
+              <p>Certificate of Achievement · May 2025</p>
+            </div>
+            <div>
+              <h3>Smart India Hackathon</h3>
+              <p>Grand Finalist · 2023</p>
+              <span className="small-detail">
+                Nyaya Sanchalak · Team Justice League
+              </span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
