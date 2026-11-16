@@ -1,6 +1,6 @@
 # Portfolio design handoff
 
-Updated 2026-11-15 after the user requested continuation. The user has now authorized animation; deployment remains deferred. The main saved technical blockers have been resolved. The subjective 9/10 target is not claimed as achieved.
+Updated 2026-11-16 after the user requested continuation. The user has now authorized animation; deployment remains deferred. The main saved technical blockers have been resolved. The subjective 9/10 target is not claimed as achieved.
 
 ## Implemented
 
@@ -41,7 +41,7 @@ Updated 2026-11-15 after the user requested continuation. The user has now autho
 ## Still remaining / decisions
 
 - User visual review and further distinctiveness polish toward subjective 9/10. Latest independent review before final mobile refinements: composition 8.7, typography 8.5, clarity 9.0, distinctiveness 8.2, mobile 8.7. No new numeric claim for the last CSS changes.
-- Full manual assistive-technology and browser-zoom checks, Safari/Firefox, external repository link-health sweep, and production performance metrics are not completed.
+- Full manual assistive-technology, real browser zoom, and Safari/Firefox checks remain. External link checks, automated text enlargement/reflow, and local throttled performance measurements are now complete (see November 16 results below).
 - Set NEXT_PUBLIC_SITE_URL to a verified public origin before publishing. Until then, sitemap has no invented domain and Next.js warns that social metadata falls back to localhost.
 - The website anonymizes the commercial project and attributes it to NucleusTeq employment. The unchanged supplied resume PDF DOES name Fyndr. User was informed; review disclosure before publishing. Do not alter PDF without instruction.
 - First animation pass is implemented. User motion review is pending; additional effects are optional.
@@ -97,3 +97,19 @@ Verified:
 Pending: user's live motion review, real-device/Safari/Firefox testing, manual assistive-technology review and performance profiling. Domain/disclosure decisions above still apply. No deployment performed.
 
 Evidence: cook/motion-check.cjs, cook/motion-checks.json, cook/stills/r05/. Preview: http://localhost:3004.
+
+## Verification continuation — 2026-11-16
+
+Fixed a class-name concatenation defect in ProjectVisual: compact cards previously rendered a merged visual-libraryvisual-compact class (and equivalents), preventing both the project-specific palette and compact styles from applying. Class tokens now join explicitly. Removed the fixed desktop compact-visual height so enlarged text can expand the illustration instead of clipping.
+
+Results on the rebuilt production site:
+- Build/TypeScript, ESLint error check, Prettier, and git diff whitespace check pass.
+- axe-core 4.14 WCAG A/AA scan: zero violations on homepage, archive, and all four case studies. Each still has an incomplete contrast result for patterned illustration backgrounds; no full accessibility certification claimed.
+- All six pages reflow at 1440/640/320px without document overflow. Automated 200% text enlargement finds no visible text clipping; intentionally clipped sr-only labels are excluded from findings. This simulates text enlargement, not actual browser zoom or a screen-reader session.
+- Restored compact illustrations verified at 1440/1024/768/390/320px with no container clipping; desktop/mobile screenshots inspected. 200% text enlargement also passes for those illustrations.
+- Seven public profile/repository URLs returned HTTP 200, including all five project repositories. This establishes reachability, not review of repository content or authentication behavior.
+- Three cold mobile homepage runs in installed Chrome: 390x844 viewport, disabled cache, 4x CPU slowdown, 150ms latency, 200,000 bytes/sec download (~1.6Mbps), 93,750 bytes/sec upload. LCP 2312/1904/2036ms (median 2036ms), CLS 0 in all three. Long-task counts 7/4/3. Native animation enabled. Local lab results only: no field Core Web Vitals, INP, Lighthouse score, or real-device performance claim.
+
+Remaining: user motion/visual review; manual screen-reader and browser-zoom checks; real-device and Safari/Firefox coverage; patterned-background contrast review; domain and employer/PDF disclosure decisions before any publishing. No deployment performed. Subjective 9/10 is still not asserted.
+
+Evidence: cook/resume-audit.cjs and .json, cook/card-review.cjs and .json, cook/stills/r06/. Local production preview restarted at http://localhost:3004.

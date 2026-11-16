@@ -1543,7 +1543,6 @@ h2 {
 @media (min-width: 801px) {
   .visual-compact {
     min-height: 390px;
-    height: 390px;
   }
 }
 .prose h2 {

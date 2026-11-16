@@ -45,7 +45,11 @@ export function ProjectVisual({
   }[kind];
   return (
     <div
-      className={`project-visual visual-${kind}${compact ? "visual-compact" : ""}`}
+      className={[
+        "project-visual",
+        `visual-${kind}`,
+        compact ? "visual-compact" : "",
+      ].join(" ")}
       role="img"
       aria-label={`Conceptual workflow illustration: ${nodes[kind].join(" to ")}`}
     >
