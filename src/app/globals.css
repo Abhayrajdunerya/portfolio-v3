@@ -1904,6 +1904,11 @@ h2 {
 }
 
 /* Recognition stays secondary to engineering work, with readable document previews. */
+.credentials-section {
+  border-top: 1px solid var(--border);
+}
+
+/* Recognition stays secondary to engineering work, with readable document previews. */
 .credentials-highlight {
   display: grid;
   grid-template-columns: 1fr 1fr;
