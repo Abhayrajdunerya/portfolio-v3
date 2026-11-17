@@ -1622,7 +1622,7 @@ h2 {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-block: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
 .skill-group {
   display: flex;
@@ -1904,6 +1904,9 @@ h2 {
 }
 
 /* Recognition stays secondary to engineering work, with readable document previews. */
+.credentials-section {
+  border-top: 1px solid var(--border);
+}
 .credentials-highlight {
   display: grid;
   grid-template-columns: 1fr 1fr;
