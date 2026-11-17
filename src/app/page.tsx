@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { CredentialsSection } from "@/components/credentials-section";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectVisual } from "@/components/project-visual";
 import { SkillsSection } from "@/components/skills-section";
@@ -217,11 +218,6 @@ export default function Home() {
               <span className="small-detail">CGPA 8.36 / 10</span>
             </div>
             <div>
-              <span className="section-label">Recognition</span>
-              <h3>NucleusTeq Sparkling Stars</h3>
-              <p>Certificate of Achievement · May 2025</p>
-            </div>
-            <div>
               <h3>Smart India Hackathon</h3>
               <p>Grand Finalist · 2023</p>
               <span className="small-detail">
@@ -230,6 +226,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <CredentialsSection />
       </div>
     </main>
   );

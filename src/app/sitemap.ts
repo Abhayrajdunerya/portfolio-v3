@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "/work",
+    "/credentials",
     ...projects.map((project) => `/work/${project.slug}`),
   ].map((path) => ({ url: `${siteUrl}${path}` }));
 }

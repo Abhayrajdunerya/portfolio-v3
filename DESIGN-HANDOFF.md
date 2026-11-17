@@ -113,3 +113,27 @@ Results on the rebuilt production site:
 Remaining: user motion/visual review; manual screen-reader and browser-zoom checks; real-device and Safari/Firefox coverage; patterned-background contrast review; domain and employer/PDF disclosure decisions before any publishing. No deployment performed. Subjective 9/10 is still not asserted.
 
 Evidence: cook/resume-audit.cjs and .json, cook/card-review.cjs and .json, cook/stills/r06/. Local production preview restarted at http://localhost:3004.
+
+## PAUSED — certificates and scrolling, 2026-11-16
+
+User requested an immediate stop at 8% usage. Changes are saved in the working tree, NOT committed yet.
+
+Implemented: seven selected credentials, homepage award/shortlist section, /credentials evidence page, typed credential data, original evidence files and lightweight WebP previews, navigation/sitemap link, native smooth section scrolling with reduced-motion fallback, and tablet navigation changes. CREDENTIALS.md records selection and exclusions. Offer letter, internal NucleusTeq training email, and two basic certificates are NOT public assets.
+
+Checks: initial build/types/lint/format passed. Initial Chrome suite passed smooth scroll (intermediate scrollY167 vs final2766), seven entries, all images decoded, five widths, zero axe violations, and all 12 evidence assets byte checks. Visual review prompted intro spacing and tablet-menu refinements. Incremental build served stale CSS; cleared only generated .next and clean build passed. Final browser suite was already running at pause (exec session60683); its result is in cook/credentials-checks.json if completed. Check outcome before claiming final pass. Latest lint/format command session38869 may need result collection.
+
+On resume:
+1. Inspect git status and final test result; do not restart intake or duplicate assets.
+2. Verify tablet menu column layout at768px, intro spacing, and all seven certificate previews after scrolling. Independent reviewer reported blank panels for JavaScript/Next.js/Oasis in a full-page screenshot, despite earlier successful image decoding; distinguish lazy-load screenshot capture from a real loading defect. Inspect and recapture as needed.
+3. Confirm final build, lint/format status; document any failures and commit the completed change using normal hooks.
+4. Present homepage and /credentials preview to user. No deployment authorized.
+
+Files: src/lib/credentials.ts, src/components/credentials-section.tsx, src/app/credentials/page.tsx, public/credentials/, plus homepage/header/layout/CSS/sitemap modifications. Evidence/scripts: cook/certificates/, cook/credentials-check.cjs, cook/credentials-checks.json, cook/stills/r07/. Local preview server session47993 on http://localhost:3004 was started just before pause.
+
+Pause result: final clean-build browser suite completed successfully, including tablet menu column layout, smooth/reduced-motion scrolling, all seven image decodes, five widths, zero axe violations/page errors, and exact-byte document links. Preview server47993 stopped during pause cleanup. Visual screenshot concern still merits a focused review on resume; no further work was performed.
+
+## Credentials completed — 2026-11-17
+
+Resumed the saved work without rebuilding or changing the implementation. All seven certificate previews loaded and decoded in a fresh mobile browser session. Individually captured each credential under cook/stills/r08; visually inspected JavaScript, Next.js, and Oasis, the three previously flagged as blank. Each displays correctly. The earlier full-page screenshot concern was not reproducible as an image-loading defect. Tablet menu confirmed vertical at768px. Current ESLint error check and Prettier check passed; the prior clean production build and comprehensive credentials/scrolling suite remain valid because application source has not changed since those checks.
+
+Seven selected credentials, original evidence links, homepage recognition section, /credentials route, native smooth scrolling, and reduced-motion behavior are ready for user review. CREDENTIALS.md contains the selection rationale. Remaining broader manual/browser/publication checks above still apply; no deployment. Preview restarted at http://localhost:3004. This completion supersedes the earlier uncommitted/pending-review pause status.

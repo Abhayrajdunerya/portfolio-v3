@@ -15,6 +15,7 @@ export function SiteHeader() {
     { href: "/#experience", label: "Experience" },
     { href: "/#skills", label: "Skills" },
     { href: "/#about", label: "About" },
+    { href: "/credentials", label: "Credentials" },
   ];
   return (
     <header
